@@ -1,0 +1,105 @@
+{
+	"project": "Leads Automation System",
+	"description": "Sample workflow output showing lead classification and processing",
+	"timestamp": "2025-09-21T14:30:00Z",
+	"processing_period": "Daily Batch",
+
+	"sample_leads_processed": [
+		{
+			"lead_id": "LEAD001",
+			"customer_name": "Solar Solutions Inc",
+			"project_location": "Caracas, Venezuela",
+			"equipment_needed": [ "Solar Panels", "Inverter", "Battery System" ],
+			"autonomy_hours": 24,
+			"budget_usd": 85000,
+			"region_classification": "North Venezuela - High Priority",
+			"equipment_category": "Complete Solar Hybrid System",
+			"priority_rank": 1,
+			"estimated_project_value": "$85,000 USD",
+			"status": "Assigned to Engineering Team",
+			"processing_time_minutes": 3,
+			"data_quality": "Complete - All fields valid",
+			"assignment_date": "2025-09-21"
+		},
+		{
+			"lead_id": "LEAD002",
+			"customer_name": "Emergency Backup Solutions",
+			"project_location": "Valencia, Venezuela",
+			"equipment_needed": [ "Diesel Generator", "Transfer Switch" ],
+			"autonomy_hours": 12,
+			"budget_usd": 45000,
+			"region_classification": "Central Venezuela - Medium Priority",
+			"equipment_category": "Diesel Backup System",
+			"priority_rank": 3,
+			"estimated_project_value": "$45,000 USD",
+			"status": "Assigned to Engineering Team",
+			"processing_time_minutes": 2,
+			"data_quality": "Complete - All fields valid",
+			"assignment_date": "2025-09-21"
+		},
+		{
+			"lead_id": "LEAD003",
+			"customer_name": "Maracaibo Industrial",
+			"project_location": "Maracaibo, Venezuela",
+			"equipment_needed": [ "Solar Panels", "Hybrid Inverter" ],
+			"autonomy_hours": 18,
+			"budget_usd": 120000,
+			"region_classification": "West Venezuela - High Priority",
+			"equipment_category": "Hybrid Solar System",
+			"priority_rank": 2,
+			"estimated_project_value": "$120,000 USD",
+			"status": "Assigned to Engineering Team",
+			"processing_time_minutes": 2.5,
+			"data_quality": "Complete - All fields valid",
+			"assignment_date": "2025-09-21"
+		}
+	],
+
+	"daily_summary": {
+		"total_leads_received": 8,
+		"leads_processed": 8,
+		"leads_with_errors": 0,
+		"average_processing_time_minutes": 2.4,
+		"time_saved_vs_manual_hours": 2.0,
+		"data_loss_rate_percent": 0,
+		"system_uptime_percent": 100,
+		"processing_date": "2025-09-21"
+	},
+
+	"workflow_metrics": {
+		"before_automation": {
+			"manual_processing_time_per_lead_minutes": 15,
+			"weekly_hours_wasted": 18,
+			"data_loss_rate_percent": 6.5,
+			"classification_accuracy_percent": 85,
+			"engineer_assignment_delay_hours": 48
+		},
+		"after_automation": {
+			"automated_processing_time_per_lead_minutes": 2.5,
+			"weekly_hours_saved": 16,
+			"data_loss_rate_percent": 0,
+			"classification_accuracy_percent": 99,
+			"engineer_assignment_delay_minutes": 5
+		},
+		"efficiency_improvement_percent": 83
+	},
+
+	"implementation_details": {
+		"form_platform": "Google Forms",
+		"database": "Google Sheets",
+		"workflow_engine": "n8n",
+		"classification_logic": "JavaScript custom nodes",
+		"trigger_frequency": "Every 15 minutes",
+		"average_workflow_execution_time_seconds": 180,
+		"last_execution": "2025-09-21T14:30:00Z"
+	},
+
+	"quality_checks": {
+		"all_required_fields_present": true,
+		"data_validation_passed": true,
+		"region_classification_valid": true,
+		"budget_range_valid": true,
+		"equipment_category_recognized": true,
+		"no_duplicate_leads": true
+	}
+}
