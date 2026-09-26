@@ -1,130 +1,22 @@
-# PROYECTO 1: Sistema Automático de Captura y Clasificación de Leads
+# Captación y organización de solicitudes de respaldo eléctrico
 
-**Estado:** ✅ Producción  
-**Stack Tecnológico:** Google Forms | Google Sheets | n8n  
-**Impacto:** $45,000 USD en valor operacional  
+[English](README-en.md) · [Inicio / Home](../README.md)
 
----
+**Herramientas:** Google Forms · Google Sheets · Airtable · IA como apoyo.
+**Contexto:** proceso utilizado con solicitudes reales en Aponwaonet.
 
-## Descripción General
+## Reto
+Recoger los requerimientos de personas interesadas en respaldo eléctrico y organizar la información para atender sus solicitudes.
 
-Sistema automatizado de captura, clasificación y centralización de leads que elimina la entrada manual de datos y reduce el tiempo de respuesta de leads de 48 horas a minutos.
+## Mi aporte
+Construí un formulario de Google Forms conectado a Sheets para registrar respuestas automáticamente. Depuré los registros y los importé manualmente a Airtable. También utilicé IA para transformar listas de precios antes de importarlas al catálogo.
 
-### El Desafío
-- 15+ horas/semana perdidas en procesamiento manual de leads en múltiples hojas de cálculo
-- Sin proceso de captura estandarizado (correos, mensajes, formularios mezclados)
-- 48 horas de retraso antes de la asignación al equipo de ingeniería
-- 5-8% tasa de pérdida de datos por errores de transcripción manual
+## Entregable y uso
+Organicé una base de clientes y productos y un tablero en Airtable con estimaciones de solicitudes mensuales, tiempos de respuesta y el presupuesto declarado más alto entre los requerimientos recibidos. Este último indicador corresponde al presupuesto indicado por el cliente, no a una venta realizada.
 
-### La Solución
-- Formulario Google unificado para captura estandarizada de leads
-- Base de datos centralizada en Google Sheets con auto-población
-- Workflow n8n para clasificación y enrutamiento de leads en tiempo real
-- Ranking automático de prioridades por región y tipo de equipo
+El proceso se utilizó con un volumen pequeño de solicitudes reales. El análisis de requerimientos y el dimensionamiento se realizaban manualmente con apoyo de IA; la conexión de Sheets a Airtable era una importación manual.
 
----
+## Evidencia y alcance
+Se conservan capturas privadas del formulario, las respuestas y el catálogo. No se publican datos de clientes. No se midió una reducción de tiempos ni un incremento de ventas atribuible al proceso.
 
-## Métricas Clave
-
-| Métrica | Antes | Después | Impacto |
-|---------|-------|---------|---------|
-| **Tiempo de Procesamiento/Lead** | 15 min | 2-3 min | 70% reducción |
-| **Horas Semanales Ahorradas** | 0 | 14-18 hrs | **$12,000/año** |
-| **Tasa de Pérdida de Datos** | 5-8% | 0% | 100% precisión |
-| **Asignación a Ingeniería** | 48h | Minutos | **$20,000/año** |
-| **Precisión de Clasificación** | 85% | 99% | 14% mejora |
-
-**Valor Anual Total: ~$45,000 USD**
-
----
-
-## Arquitectura Técnica
-
-```
-Formulario Google (Captura)
-    ↓
-Google Sheets (Datos Brutos)
-    ↓
-Workflow n8n (Lógica de Clasificación)
-    ├─ Extraer datos de Sheets
-    ├─ Aplicar reglas de clasificación
-    ├─ Ranking por prioridad
-    └─ Enrutamiento a cola de asignación
-    ↓
-Base de Datos Maestra (Centralizada)
-    ↓
-Notificaciones (Email/Slack al Equipo)
-```
-
----
-
-## Archivos en Este Proyecto
-
-- `google-form-schema.json` — Estructura y campos del formulario
-- `master-sheet-template.csv` — Template de base de datos con reglas de validación
-- `n8n-workflow.json` — Exportación completa del workflow
-- `classification-rules.md` — Lógica de negocio para priorización
-
----
-
-## Inicio Rápido
-
-1. **Crear Formulario Google** con campos:
-   - Nombre del Cliente (requerido)
-   - Ubicación del Proyecto (requerido)
-   - Equipos Necesarios (checkboxes)
-   - Presupuesto (número)
-   - Horas de Autonomía (número)
-
-2. **Conectar a Google Sheets:**
-   - Formulario → Más → Seleccionar Destino de Respuestas
-   - Crear nueva hoja "Master Leads Database"
-   - Habilitar auto-población
-
-3. **Importar Workflow en n8n:**
-   - Ingresar a n8n
-   - Importar `n8n-workflow.json`
-   - Configurar conexión Google Sheets API
-   - Establecer frecuencia de trigger (recomendado: cada 15 minutos)
-   - Agregar notificaciones (email/Slack)
-   - Probar con datos de muestra
-
-4. **Monitoreo y Optimización:**
-   - Revisar logs del workflow diariamente
-   - Monitorear precisión de clasificación
-   - Ajustar reglas según sea necesario
-   - Reportar métricas semanales
-
----
-
-## Operación Diaria
-
-**Ejecución del Workflow:**
-- Trigger: Cada 15 minutos
-- Tiempo promedio de ejecución: 180 segundos por lote
-- Disponibilidad del sistema: 99.8%
-
-**Flujo de Procesamiento de Leads:**
-1. Nueva respuesta del formulario llega
-2. Datos auto-poblados en Google Sheets
-3. Workflow n8n detecta nueva entrada
-4. Reglas de clasificación aplicadas
-5. Lead asignado a cola del equipo
-6. Notificación enviada (Email/Slack)
-7. Miembro del equipo revisa y actúa
-
----
-
-## Próximos Pasos
-
-- [ ] Expandir clasificación a otras funciones de negocio
-- [ ] Agregar puntuación de leads con IA (potencial de ingresos)
-- [ ] Integrar con CRM para seguimiento automático
-- [ ] Crear portal orientado al cliente para seguimiento de estado
-- [ ] Construir dashboard de análisis de embudo de ventas
-
----
-
-**Versión:** 1.0  
-**Última Actualización:** Septiembre 2026  
-**Mantenido por:** Yoselyn Mogollón
+El [ejemplo de estructura](../01-leads-automation-example.json) contiene datos ficticios preparados para explicar los campos, no resultados de ejecución.

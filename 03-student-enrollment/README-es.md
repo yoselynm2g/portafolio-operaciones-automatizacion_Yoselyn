@@ -1,133 +1,23 @@
-# PROYECTO 3: Optimización de Ingreso de Estudiantes y Operaciones
+# Base de datos relacional para un programa de ayudantías
 
-**Estado:** ✅ Producción  
-**Stack Tecnológico:** Excel | Google Sheets | Automatización Email  
-**Organización:** Universidad Metropolitana (4,500+ estudiantes)  
-**Impacto:** $25,000 USD en valor operacional
+[English](README-en.md) · [Inicio / Home](../README.md)
 
----
+**Herramienta:** SQL Server.
+**Contexto:** proyecto de aprendizaje construido después de mi empleo en UNIMET, inspirado en procesos que conocí durante mi trayectoria administrativa.
 
-## Descripción General
+## Reto
+Representar las relaciones entre estudiantes, carreras, programas, evaluaciones, departamentos y supervisores para consultar la información de forma estructurada.
 
-Sistema de optimización de procesos para ingreso/retiro de estudiantes con listas de verificación pre-validadas, monitoreo de dashboard y comunicaciones automatizadas para reducir incidencias operacionales e inquietudes de soporte en 15%.
+## Mi aporte y entregable
+Construí una base relacional de 11 tablas, con claves primarias y foráneas, tablas de unión y consultas de análisis. Conservé el esquema, los scripts y un diagrama de diseño. Validé los scripts en SQL Server antes de su publicación.
 
-### El Desafío
-- 40-50 casos de ingreso + ~20 casos de retiro por período de inscripción
-- Documentos faltantes causaban retrasos y seguimientos repetidos
-- Sin seguimiento centralizado del estado de solicitudes
-- Equipo de soporte gastaba 15-20 horas/semana en inquietudes rutinarias
+## Consultas y resultados
+El ejercicio original produjo 82 estudiantes y 37 aprobados según mis consultas. Estas cifras pertenecen a ese conjunto de trabajo; no representan resultados de la demostración sintética ni una mejora operativa medida en UNIMET.
 
-### La Solución
-- Lista de requisitos estandarizada para todos los estudiantes
-- Matriz de control Excel con formato condicional (estado Verde/Amarillo/Rojo)
-- Plantillas de email automatizadas para hitos clave
-- Dashboard en tiempo real para seguimiento del progreso
-- Comunicación proactiva reduce tickets de soporte en 40%
+La versión de demostración que conservo localmente utiliza datos ficticios: 8 estudiantes, 16 evaluaciones y 5 estudiantes con al menos una aprobación. Diferenciar estudiantes de evaluaciones evita contar varias veces a una misma persona.
 
----
+## Material disponible
+- [Repositorio del proyecto SQL](https://github.com/yoselynm2g/Portafolio_Yoselyn/tree/main/Project_2_RelationalDB/Project_2_RelationalDB).
+- En este portafolio se documenta el alcance del caso; los archivos SQL se mantienen en el repositorio específico.
 
-## Métricas Clave
-
-| Métrica | Resultado | Impacto |
-|---------|-----------|---------|
-| **Inquietudes de Soporte/Semana** | 15% reducido | 10-12 llamadas menos |
-| **Incidentes Operacionales** | 15% reducido | Mayor satisfacción |
-| **Tiempo Promedio de Procesamiento** | 8-10 días | Decisiones más rápidas |
-| **Tasa de Completitud de Documentos** | 92% | Sistema pre-validación |
-| **Satisfacción Estudiantil** | +18% | Comunicación clara |
-
-**Valor Anual Total: ~$25,000 USD**
-
----
-
-## Flujo de Proceso
-
-```
-Solicitud de Estudiante Recibida
-    ↓
-Sistema: Enviar Confirmación + Checklist
-    ↓
-Dashboard: Estado = "En Progreso" (Amarillo)
-    ↓
-Documentos Verificados
-    ├─ Todos Completos → Estado = "Listo" (Verde)
-    └─ Faltantes → Recordatorio Automático
-    ↓
-Decisión de Aprobación
-    ├─ Aprobado → Estado = "Activo" (Verde) + Notificación
-    └─ Requiere Más Info → Escalación + Seguimiento
-    ↓
-Completado
-    └─ Estado = "Completado" + Archivo
-```
-
----
-
-## Archivos en Este Proyecto
-
-- `control-matrix-template.xlsx` — Dashboard de seguimiento principal
-- `requirements-checklist.md` — Requisitos de documentos completos
-- `email-templates.md` — Plantillas de comunicación automatizadas
-- `sample-workflow.md` — Guía paso a paso del proceso
-
----
-
-## Características del Dashboard
-
-**Columnas:**
-- Nombre Estudiante | ID | Carrera
-- Estado Documentos | Estado Aprobación | Fecha Completitud
-- Formato Condicional: Verde (Completo) | Amarillo (En Riesgo) | Rojo (Crítico)
-
-**Tablas Dinámicas:**
-- Solicitudes por Carrera
-- Tendencias Tiempo de Procesamiento
-- Tasas Completitud de Documentos
-- Cuellos de Botella de Aprobación
-
----
-
-## Comunicaciones Automatizadas
-
-**Trigger 1: Solicitud Recibida**
-```
-Asunto: Tu Solicitud fue Recibida - Aquí va el Siguiente Paso
-Contenido: Confirmación + Checklist de documentos + Timeline
-```
-
-**Trigger 2: Documentos Verificados**
-```
-Asunto: ¡Excelente! Documentos Recibidos - Avanzamos
-Contenido: Aviso de aprobación + Fecha estimada de decisión
-```
-
-**Trigger 3: Documentos Vencidos**
-```
-Asunto: Acción Requerida: Documentos Faltantes (Recordatorio)
-Contenido: Lista docs faltantes + Link subida + Plazo
-```
-
----
-
-## Lecciones Aprendidas
-
-1. **Comunicación proactiva previene 40% de tickets** — No esperes que pregunten
-2. **Formato condicional detecta excepciones** — Estado Rojo = acción inmediata
-3. **Checklists eliminan idas y venidas** — Requisitos claros = menos rechazos
-4. **Visibilidad de estado mejora responsabilidad** — Dashboard transforma cultura
-
----
-
-## Próximos Pasos
-
-- [ ] Migrar a Airtable para colaboración en tiempo real
-- [ ] Agregar portal de carga de documentos para estudiantes
-- [ ] Implementar recordatorios automatizados (Zapier/Make)
-- [ ] Construir dashboard de análisis para gerencia
-- [ ] Crear app móvil para seguimiento de estudiantes
-
----
-
-**Versión:** 1.0  
-**Última Actualización:** Septiembre 2026  
-**Mantenido por:** Yoselyn Mogollón
+Este desarrollo posterior no se presenta como un sistema implantado durante mi empleo. El trabajo institucional de reportes se describe en el [proyecto 4](../04-scholarships-bi/README-es.md).

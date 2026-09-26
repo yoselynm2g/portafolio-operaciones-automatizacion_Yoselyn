@@ -1,26 +1,4 @@
-student_id,student_name,career,program_name,benefit_amount_usd,expected_discount_percent,applied_discount_percent,validation_status,exception_reason,renewal_type,status,enrollment_date
-EST001,Juan Martinez,Engineering,Impacto,1500,50,50,GREEN,None,Annual,Active,2025-08-15
-EST002,Maria Rodriguez,Business,Excelencia,2000,75,75,GREEN,None,Annual,Active,2025-08-15
-EST003,Carlos Lopez,Medicine,Impacto,1500,50,50,GREEN,None,Annual,Active,2025-08-15
-EST004,Ana Garcia,Law,Hijo de Trabajador,800,30,30,GREEN,None,Annual,Active,2025-08-15
-EST005,Pedro Sanchez,Engineering,Excelencia,2000,75,72,YELLOW,Faculty Council Exception,Annual,Active,2025-08-15
-EST006,Sofia Morales,Business,Impacto,1500,50,50,GREEN,None,Annual,Active,2025-08-15
-EST007,Diego Ramirez,Engineering,Ayudantia,500,100,100,GREEN,None,Trimestral,Active,2025-08-15
-EST008,Laura Fernandez,Medicine,Excelencia,2000,75,75,GREEN,None,Annual,Active,2025-08-15
-EST009,Miguel Vasquez,Law,Impacto,1500,50,50,GREEN,None,Annual,Active,2025-08-15
-EST010,Isabel Castro,Business,Hijo de Trabajador,800,30,30,RED,ERROR - Discount Not Applied,Annual,Needs Review,2025-08-15
-EST011,Roberto Gutierrez,Engineering,Impacto,1500,50,50,GREEN,None,Annual,Active,2025-08-15
-EST012,Carmen Moreno,Medicine,Ayudantia,500,100,100,GREEN,None,Trimestral,Active,2025-08-15
-EST013,Fernando Ruiz,Law,Excelencia,2000,75,75,GREEN,None,Annual,Active,2025-08-15
-EST014,Lucia Hernandez,Business,Impacto,1500,50,50,GREEN,None,Annual,Active,2025-08-15
-EST015,Marco Antonio,Engineering,Hijo de Trabajador,800,30,30,GREEN,None,Annual,Active,2025-08-15
-EST016,Patricia Flores,Medicine,Impacto,1500,50,50,GREEN,None,Annual,Active,2025-08-15
-EST017,Jorge Mendez,Law,Excelencia,2000,75,75,GREEN,None,Annual,Active,2025-08-15
-EST018,Gabriela Torres,Business,Ayudantia,500,100,100,GREEN,None,Trimestral,Active,2025-08-15
-EST019,Ricardo Ortiz,Engineering,Impacto,1500,50,48,YELLOW,Faculty Appeal Case,Annual,Active,2025-08-15
-EST020,Alejandra Dominguez,Medicine,Excelencia,2000,75,75,GREEN,None,Annual,Active,2025-08-15
-EST021,Andres Navarro,Law,Impacto,1500,50,50,GREEN,None,Annual,Active,2025-08-15
-EST022,Victoria Jimenez,Business,Hijo de Trabajador,800,30,30,GREEN,None,Annual,Active,2025-08-15
-EST023,Francisco Ramos,Engineering,Excelencia,2000,75,75,GREEN,None,Annual,Active,2025-08-15
-EST024,Mariana Soto,Medicine,Ayudantia,500,100,100,GREEN,None,Trimestral,Active,2025-08-15
-EST025,Eduardo Vargas,Law,Excelencia,2000,75,75,GREEN,None,Annual,Active,2025-08-15
+data_type,student_id,benefit_id,program,quarter
+synthetic,DEMO-001,BEN-001,Programa ficticio A,DEMO-T1
+synthetic,DEMO-001,BEN-002,Programa ficticio B,DEMO-T1
+synthetic,DEMO-002,BEN-003,Programa ficticio A,DEMO-T1
