@@ -54,7 +54,8 @@ flowchart LR
 - Real cases loaded in Airtable for reference: 3 customers, 1 still preliminary.
 - Two area-wide offers approved by the technical approver and used as the basis for promotional material.
 - **Impact example from a real case:** using the refrigerator's energy label instead of its nameplate rating reduced the required batteries from 2 units to 1 for the same 4 hours.
-- **Not yet measured:** response time and sales attributable to the tool. The system has not reached version 1.0.
+- **First time measurement (1 real case):** from having the nameplate photos to the finished quotation, the process went from **about one week** to **about 3 hours**. The earlier figure is an estimate; the new one was measured. The field survey itself took about 3 hours.
+- **Ongoing measurement:** Airtable records the request date, the draft date (automatic), the sending date, working hours and the commercial outcome. Sales attributable to the tool are not yet measured; they will be reported after 5 to 10 quotations.
 
 ## Lessons
 - A language model is useful for reading and organizing (for example, nameplate photos). Calculations and pricing need verifiable rules and human approval.

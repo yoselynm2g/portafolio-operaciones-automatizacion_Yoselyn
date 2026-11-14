@@ -54,7 +54,8 @@ flowchart LR
 - Casos reales cargados en Airtable para consulta: 3 clientes, 1 de ellos todavía preliminar.
 - Dos ofertas de zona aprobadas por el aprobador técnico y usadas como base de material publicitario.
 - **Ejemplo de impacto en un caso real:** con la etiqueta de consumo de la nevera en lugar del consumo de placa, la batería necesaria bajó de 2 unidades a 1 para las mismas 4 horas.
-- **No se miden todavía** el tiempo de respuesta ni las ventas atribuibles al cotizador. El sistema no ha cerrado su versión 1.0.
+- **Primera medición de tiempo (1 caso real):** desde tener las fotos de las placas hasta la cotización, el proceso pasó de **aproximadamente una semana** a **unas 3 horas**. El tiempo de antes es un estimado; el de después se midió. Además, el levantamiento en campo tomó unas 3 horas.
+- **Medición continua:** Airtable registra la fecha de solicitud, del borrador (automática), del envío, las horas de trabajo y el resultado comercial. Las ventas atribuibles al cotizador todavía no se miden; se reportarán después de 5 a 10 cotizaciones.
 
 ## Aprendizajes
 - Un modelo de lenguaje sirve para leer y organizar (por ejemplo, fotos de placas). El cálculo y el precio necesitan reglas verificables y una persona que apruebe.
