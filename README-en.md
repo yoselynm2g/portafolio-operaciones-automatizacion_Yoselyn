@@ -13,6 +13,7 @@ This portfolio brings together applied work, learning projects and prototypes. E
 | [Scholarship and benefit reporting](04-scholarships-bi/README-en.md) | Data preparation and dashboards using Google Sheets and Looker Studio | Work at UNIMET, 2023 |
 | [Assistantship relational database](03-student-enrollment/README-en.md) | An 11-table SQL Server model and analytical queries | Learning project after employment |
 | [Electrical-backup inquiries](01-leads-automation/README-en.md) | Forms/Sheets capture and Airtable organization | Real inquiries at Aponwaonet |
+| [Backup-power quotation engine](06-cotizador-respaldo-electrico/README-en.md) | Business rules, tested Python engine, Airtable → GitHub Actions → PDF field workflow, human approval | Internal pilot at Aponwaonet, 2026 |
 | [n8n and Gemini quotations](02-n8n-quotations-ai/README-en.md) | Workflow design, integration and test review | Development prototype |
 | [Hospitality energy proposal](05-hotel-roi/README-en.md) | Bill review, research and an executive presentation | Preliminary proposal |
 

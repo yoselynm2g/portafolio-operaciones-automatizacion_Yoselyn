@@ -20,3 +20,5 @@ Las pruebas no produjeron cotizaciones suficientemente consistentes para uso ope
 El flujo no llegó a producción. No se ha acreditado una exportación completa y usable de cotizaciones ni se presentan métricas de ahorro. La revisión actual parte de estructurar mejor los datos de clientes y productos.
 
 El [ejemplo JSON](../02-quotation-sample.json) es una estructura conceptual creada para documentación, no una cotización generada por el prototipo. Las capturas originales se conservan de forma privada porque contienen datos de clientes.
+
+**Continuación:** las lecciones de este prototipo dieron origen al [cotizador con reglas de negocio y aprobación humana](../06-cotizador-respaldo-electrico/README-es.md).

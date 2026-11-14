@@ -13,6 +13,7 @@ Este portafolio reúne trabajo aplicado, proyectos de aprendizaje y prototipos. 
 | [Becas y beneficios estudiantiles](04-scholarships-bi/README-es.md) | Depuración de datos y dashboard en Google Sheets y Looker Studio | Trabajo realizado en UNIMET, 2023 |
 | [Base relacional de ayudantías](03-student-enrollment/README-es.md) | Modelo de 11 tablas y consultas en SQL Server | Aprendizaje posterior al empleo |
 | [Solicitudes de respaldo eléctrico](01-leads-automation/README-es.md) | Captura con Forms/Sheets y organización en Airtable | Uso con solicitudes reales en Aponwaonet |
+| [Cotizador de respaldo eléctrico](06-cotizador-respaldo-electrico/README-es.md) | Reglas de negocio, motor en Python con pruebas, flujo de campo Airtable → GitHub Actions → PDF, aprobación humana | Piloto interno en Aponwaonet, 2026 |
 | [Cotizaciones con n8n y Gemini](02-n8n-quotations-ai/README-es.md) | Diseño de flujo, integración y revisión de pruebas | Prototipo en desarrollo |
 | [Propuesta energética para hotelería](05-hotel-roi/README-es.md) | Revisión de facturas, investigación y presentación ejecutiva | Propuesta preliminar |
 
