@@ -1,0 +1,27 @@
+{
+  "example_type": "synthetic_documentation_only",
+  "not_real_customer": true,
+  "prices_are_fictional": true,
+  "quote_id": "DEMO-2026-001",
+  "status": "DRAFT_PENDING_APPROVAL",
+  "customer": "Cliente ficticio 01",
+  "design_hours": 4,
+  "loads": [
+    {"name": "Router + ONT", "watts": 18, "qty": 1, "evidence": "nameplate"},
+    {"name": "Laptop (charger output)", "watts": 65, "qty": 1, "evidence": "charger nameplate", "note": "laptop and charger counted once"},
+    {"name": "LED lamp", "watts": 9, "qty": 4, "evidence": "box"},
+    {"name": "Refrigerator", "watts": 150, "qty": 1, "kwh_per_year": 400, "evidence": "energy label", "start": "compressor"}
+  ],
+  "checks": {
+    "inverter_continuous": "OK",
+    "starting_surge": "OK",
+    "battery_current": "OK",
+    "recharge_within_2h": "REVIEW",
+    "grounding": "PENDING_DECISION"
+  },
+  "options": [
+    {"level": "basic", "batteries": 1, "total_usd": 1000.00},
+    {"level": "extended", "batteries": 2, "total_usd": 1500.00}
+  ],
+  "approval": {"approved_by": null, "note": "Every quotation stays a draft until the technical approver signs off."}
+}
