@@ -1,212 +1,180 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Yoselyn Mogollón · Operaciones &amp; Data</title>
-<meta name="description" content="Convierto procesos improvisados en sistemas con estructura: cotizadores, flujos de datos y automatizaciones a la medida de tu negocio.">
-<link rel="icon" href="img/simbolo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --navy: #0f3157;
-    --navy-2: #13406b;
-    --cyan: #26cddf;
-    --cyan-dark: #1aa3b3;
-    --gray: #cfd6e6;
-    --ink: #1b2a3a;
-    --muted: #5b6b7c;
-    --bg: #ffffff;
-    --bg-soft: #f3f7fb;
-    --card: #ffffff;
-    --border: #dde5ef;
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { margin: 0; font-family: "Montserrat", system-ui, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; }
-  a { color: var(--navy-2); }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
-
-  header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.94); backdrop-filter: blur(6px); border-bottom: 1px solid var(--border); }
-  .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
-  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--navy); font-weight: 700; }
-  .brand img { height: 30px; width: auto; }
-  .brand small { display: block; font-weight: 500; color: var(--muted); font-size: 12px; line-height: 1; }
-  .nav nav { display: flex; gap: 22px; }
-  .nav nav a { text-decoration: none; color: var(--ink); font-weight: 500; font-size: 14px; }
-  .nav nav a:hover { color: var(--cyan-dark); }
-
-  .hero { background: #ffffff; padding: 72px 0 64px; }
-  .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 40px; align-items: center; }
-  .eyebrow { color: var(--cyan-dark); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; font-size: 13px; margin: 0 0 10px; }
-  h1 { color: var(--navy); font-size: clamp(30px, 4.4vw, 46px); line-height: 1.15; margin: 0 0 18px; }
-  h1 span { color: var(--cyan-dark); }
-  .lead { font-size: 18px; color: var(--muted); margin: 0 0 28px; max-width: 560px; }
-  .btn { display: inline-block; padding: 13px 22px; border-radius: 10px; font-weight: 600; text-decoration: none; transition: transform .15s ease; }
-  .btn:hover { transform: translateY(-1px); }
-  .btn-primary { background: var(--navy); color: #fff; }
-  .btn-ghost { color: var(--navy); border: 2px solid var(--navy); margin-left: 10px; }
-  .hero-logo { text-align: center; }
-  .hero-logo img { width: 100%; max-width: 360px; height: auto; }
-
-  section { padding: 64px 0; }
-  section.soft { background: var(--bg-soft); }
-  h2 { color: var(--navy); font-size: clamp(24px, 3vw, 32px); margin: 0 0 10px; }
-  .sub { color: var(--muted); margin: 0 0 32px; max-width: 680px; }
-
-  .grid { display: grid; gap: 18px; }
-  .g4 { grid-template-columns: repeat(4, 1fr); }
-  .g2 { grid-template-columns: repeat(2, 1fr); }
-  .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 22px; }
-  .card h3 { margin: 0 0 8px; color: var(--navy); font-size: 18px; }
-  .card p { margin: 0; color: var(--muted); font-size: 15px; }
-  .pain li { margin-bottom: 8px; }
-  .num { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: var(--cyan); color: var(--navy); font-weight: 700; margin-bottom: 12px; }
-
-  .case { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; }
-  .metric { display: flex; align-items: center; gap: 18px; background: var(--navy); color: #fff; border-radius: 16px; padding: 26px; }
-  .metric .from, .metric .to { text-align: center; flex: 1; }
-  .metric strong { display: block; font-size: 30px; line-height: 1.1; white-space: nowrap; }
-  .metric .to strong { color: var(--cyan); }
-  .metric small { opacity: .85; font-size: 13px; }
-  .metric .arrow { font-size: 28px; color: var(--cyan); }
-  .note { font-size: 13px; color: var(--muted); margin-top: 10px; }
-  .checks { list-style: none; padding: 0; margin: 0; }
-  .checks li { padding-left: 26px; position: relative; margin-bottom: 10px; }
-  .checks li::before { content: "✓"; position: absolute; left: 0; color: var(--cyan-dark); font-weight: 700; }
-
-  .cta { background: var(--navy); color: #fff; text-align: center; }
-  .cta h2 { color: #fff; }
-  .cta p { color: #d7e3f1; margin: 0 auto 26px; max-width: 620px; }
-  .cta .btn-primary { background: var(--cyan); color: var(--navy); }
-  .cta .btn-ghost { border-color: #fff; color: #fff; }
-
-  footer { padding: 26px 0; font-size: 13px; color: var(--muted); text-align: center; }
-
-  @media (max-width: 860px) {
-    .hero-grid, .case { grid-template-columns: 1fr; }
-    .hero-logo { order: -1; }
-    .hero-logo img { max-width: 220px; }
-    .g4 { grid-template-columns: repeat(2, 1fr); }
-    .nav nav { display: none; }
-  }
-  @media (max-width: 520px) {
-    .g4, .g2 { grid-template-columns: 1fr; }
-    .btn-ghost { margin: 10px 0 0; }
-    .metric { flex-direction: column; gap: 6px; }
-    .metric .arrow { transform: rotate(90deg); }
-    .metric strong { font-size: 26px; }
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yoselyn Mogollón | Cotizaciones y procesos</title>
+  <meta name="description" content="Organiza las solicitudes, los precios y las reglas de tu negocio para preparar cotizaciones que tu equipo pueda revisar.">
+  <link rel="icon" href="img/simbolo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0c1021;
+      --panel: #171a31;
+      --text: #f6f4ff;
+      --muted: #c0c3d9;
+      --violet: #c4afff;
+      --cyan: #83e7f3;
+      --line: #393653;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 1rem/1.65 "DM Sans", system-ui, sans-serif;
+    }
+    a { color: var(--cyan); text-underline-offset: .2em; }
+    a:focus-visible { outline: 3px solid var(--cyan); outline-offset: 5px; }
+    .wrap { width: min(70rem, calc(100% - 2.5rem)); margin-inline: auto; }
+    header { border-bottom: 1px solid var(--line); }
+    .nav, nav, .actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: .75rem 1.5rem;
+    }
+    .nav { justify-content: space-between; padding-block: 1.15rem; }
+    .brand { font-weight: 700; color: var(--text); text-decoration: none; }
+    nav a { font-size: .95rem; color: var(--muted); }
+    section { padding-block: clamp(3.5rem, 8vw, 7rem); }
+    h1, h2, h3 {
+      font-family: Manrope, system-ui, sans-serif;
+      line-height: 1.14;
+      margin: 0 0 1rem;
+      text-wrap: balance;
+    }
+    h1 { font-size: clamp(2.35rem, 6.5vw, 5.15rem); letter-spacing: -.06em; }
+    h2 { font-size: clamp(1.8rem, 4vw, 3.1rem); letter-spacing: -.04em; }
+    h3 { font-size: 1.2rem; }
+    p { margin: 0 0 1.25rem; color: var(--muted); max-width: 65ch; }
+    .hero {
+      background: radial-gradient(ellipse at 85% 62%, #36205c 0%, transparent 53%),
+                  radial-gradient(ellipse at 80% 108%, #153d55 0%, transparent 48%);
+    }
+    .split { display: grid; gap: clamp(1.5rem, 5vw, 4rem); align-items: center; }
+    .accent { color: var(--violet); }
+    .lead { font-size: 1.13rem; }
+    .button {
+      display: inline-block;
+      border: 1px solid transparent;
+      border-radius: .7rem;
+      padding: .7rem 1.05rem;
+      background: var(--violet);
+      color: #15102a;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .button:hover { background: var(--cyan); }
+    .flow, .card, .metric {
+      border: 1px solid var(--line);
+      border-radius: 1.15rem;
+      padding: clamp(1.15rem, 3vw, 2rem);
+      background: var(--panel);
+    }
+    .flow {
+      background: linear-gradient(155deg, #211938, #12263a);
+      box-shadow: 0 1.2rem 4rem #090b19a0;
+    }
+    .flow-title { font-size: 1.35rem; }
+    .flow ol { padding-left: 1.25rem; margin: 0; }
+    .flow li { padding: .6rem .3rem; }
+    .flow li + li { border-top: 1px solid var(--line); }
+    .flow li::marker { color: var(--cyan); font-weight: 700; }
+    .band { background: #11162b; border-block: 1px solid var(--line); }
+    .cards { display: grid; gap: 1rem; margin-top: 1.75rem; }
+    .card p, .metric p:last-child { margin-bottom: 0; }
+    .source-label { color: var(--cyan); font-size: .95rem; font-weight: 700; }
+    .metric strong {
+      display: block;
+      font-family: Manrope, system-ui, sans-serif;
+      font-size: clamp(1.85rem, 4vw, 3rem);
+      color: var(--cyan);
+    }
+    footer { border-top: 1px solid var(--line); padding-block: 1.5rem; color: var(--muted); }
+    @media (min-width: 48rem) {
+      .split { grid-template-columns: 1.45fr 1fr; }
+      .cards { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
 </head>
 <body>
-
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="#">
-      <img src="img/simbolo.png" alt="">
-      <div>Yoselyn Mogollón<small>Operaciones &amp; Data</small></div>
-    </a>
-    <nav>
-      <a href="#problema">Problema</a>
-      <a href="#metodo">Método</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#caso">Caso real</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <p class="eyebrow">Procesos · Datos · Automatización</p>
-      <h1>Convierto procesos improvisados en <span>sistemas con estructura</span>.</h1>
-      <p class="lead">Diseño cotizadores, flujos de datos y automatizaciones a la medida de tu negocio, con reglas claras, datos verificables y una persona que aprueba antes de que algo llegue a tu cliente.</p>
-      <a class="btn btn-primary" href="#contacto">Conversemos sobre tu proceso</a>
-      <a class="btn btn-ghost" href="#caso">Ver un caso real</a>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#inicio">Yoselyn Mogollón</a>
+      <nav aria-label="Navegación principal">
+        <a href="#servicio">Servicio</a>
+        <a href="#caso">Caso Aponwaonet</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
     </div>
-    <div class="hero-logo"><img src="img/logo-completo.png" alt="Logo de Yoselyn Mogollón, Operaciones y Data"></div>
-  </div>
-</section>
-
-<section id="problema">
-  <div class="wrap">
-    <h2>¿Tu negocio cotiza a ciegas?</h2>
-    <p class="sub">Muchos negocios responden a sus clientes con procesos que dependen de la memoria de una persona, de chats dispersos y de hojas de cálculo que nadie revisa. El resultado se repite:</p>
-    <div class="grid g2">
-      <div class="card"><h3>Respuestas lentas</h3><p>Entre buscar precios, revisar datos y preguntar, la cotización tarda días y el cliente se enfría.</p></div>
-      <div class="card"><h3>Resultados distintos para el mismo caso</h3><p>Cada propuesta depende de quién la hace. No hay criterios escritos ni forma de revisar el cálculo.</p></div>
-      <div class="card"><h3>Datos con errores</h3><p>Equipos contados dos veces, unidades mezcladas, listas de precios vencidas. Los errores llegan hasta el cliente.</p></div>
-      <div class="card"><h3>IA sin estructura</h3><p>Preguntarle a una IA sin reglas ni datos ordenados produce respuestas que suenan bien, pero que pueden ser inventadas.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="metodo" class="soft">
-  <div class="wrap">
-    <h2>El método: de la improvisación a la estructura</h2>
-    <p class="sub">Cada negocio es distinto, pero el camino es el mismo.</p>
-    <div class="grid g4">
-      <div class="card"><div class="num">1</div><h3>Diagnóstico</h3><p>Entiendo cómo se cotiza hoy: quién, con qué datos, cuánto tarda y dónde se cometen errores.</p></div>
-      <div class="card"><div class="num">2</div><h3>Reglas</h3><p>Convertimos el criterio de tu equipo en reglas escritas: márgenes, condiciones, límites técnicos y quién aprueba.</p></div>
-      <div class="card"><div class="num">3</div><h3>Herramienta</h3><p>Construyo el flujo: captura de datos (incluso desde el teléfono), cálculo verificable y documento listo para el cliente.</p></div>
-      <div class="card"><div class="num">4</div><h3>Medición</h3><p>Registramos tiempos y resultados para saber, con datos, cuánto mejoró el proceso.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="servicios">
-  <div class="wrap">
-    <h2>Servicios</h2>
-    <p class="sub">Soluciones a la medida, con herramientas accesibles para negocios que están creciendo.</p>
-    <div class="grid g2">
-      <div class="card"><h3>Cotizadores a la medida</h3><p>Reglas de tu negocio, cálculo verificable, documento PDF con tu marca y aprobación antes de enviar.</p></div>
-      <div class="card"><h3>Captura de datos en campo</h3><p>Formularios en el teléfono conectados a una base de datos, para no depender de una computadora ni de mensajes sueltos.</p></div>
-      <div class="card"><h3>Reportes y tableros</h3><p>Indicadores claros sobre tiempos de respuesta, ventas y operación, con datos depurados.</p></div>
-      <div class="card"><h3>Depuración y organización de datos</h3><p>Catálogos, listas de precios y bases de clientes ordenados y listos para usar.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="caso" class="soft">
-  <div class="wrap case">
-    <div>
-      <p class="eyebrow">Caso real · Sistemas de respaldo eléctrico</p>
-      <h2>Cotizaciones de días a horas</h2>
-      <p>Una empresa de sistemas de respaldo eléctrico en Venezuela armaba cada cotización a mano, con listas de precios y consultas sueltas a la IA. Diseñamos:</p>
-      <ul class="checks">
-        <li>Un registro de reglas técnicas y comerciales aprobadas por el responsable técnico.</li>
-        <li>Un motor de cálculo con pruebas automáticas, que avisa cuando falta un dato en lugar de inventarlo.</li>
-        <li>Un flujo desde el teléfono que genera la cotización en PDF, con marca de borrador hasta su aprobación.</li>
-      </ul>
-      <p><a href="https://github.com/yoselynm2g/portafolio-operaciones-automatizacion_Yoselyn/blob/main/06-cotizador-respaldo-electrico/README-es.md">Ver el caso completo →</a></p>
-    </div>
-    <div>
-      <div class="metric">
-        <div class="from"><strong>≈ 1 semana</strong><small>antes</small></div>
-        <div class="arrow">→</div>
-        <div class="to"><strong>≈ 3 horas</strong><small>con el nuevo proceso</small></div>
+  </header>
+  <main id="inicio">
+    <section class="hero" aria-labelledby="titulo">
+      <div class="wrap split">
+        <div>
+          <h1 id="titulo">¿Cada cotización empieza <span class="accent">desde cero?</span></h1>
+          <p class="lead">Si tienes que buscar datos en el chat, confirmar cuál lista de precios está vigente y rehacer el cálculo para cada cliente, te ayudo a ordenar ese proceso.</p>
+          <div class="actions">
+            <a class="button" href="#contacto">Cuéntame cómo cotizas</a>
+            <a href="#caso">Ver cómo lo hice en Aponwaonet</a>
+          </div>
+        </div>
+        <div class="flow">
+          <h2 class="flow-title">De la solicitud al envío</h2>
+          <ol>
+            <li>Recoge los datos de la solicitud</li>
+            <li>Aplica las reglas de tu negocio</li>
+            <li>Prepara un borrador para revisión</li>
+            <li>Envía la cotización aprobada</li>
+          </ol>
+        </div>
       </div>
-      <p class="note">Tiempo desde tener los datos del cliente hasta la cotización, en un caso real. El tiempo de antes es un estimado; el de después se midió. La medición continúa con más casos.</p>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section id="contacto" class="cta">
-  <div class="wrap">
-    <h2>¿Cómo cotiza tu negocio hoy?</h2>
-    <p>Cuéntame tu proceso actual. Te digo con honestidad si una herramienta a la medida te ayudaría y por dónde empezar.</p>
-    <a class="btn btn-primary" href="https://www.linkedin.com/in/yoselynmogollong/">Escríbeme por LinkedIn</a>
-    <a class="btn btn-ghost" href="https://github.com/yoselynm2g/portafolio-operaciones-automatizacion_Yoselyn">Ver portafolio</a>
-  </div>
-</section>
+    <section id="servicio" class="band">
+      <div class="wrap">
+        <h2>Empecemos por una cotización real</h2>
+        <p>Vemos qué pasa desde que el cliente pide precio hasta que recibe la propuesta. Así podemos identificar dónde se pierde tiempo, qué datos faltan y qué parte conviene automatizar.</p>
+        <div class="cards">
+          <div class="card"><h3>Reviso el proceso contigo</h3><p>Identificamos qué busca tu equipo, qué vuelve a calcular y quién tiene que revisar la propuesta.</p></div>
+          <div class="card"><h3>Ordenamos datos y criterios</h3><p>Definimos qué debe traer cada solicitud, de dónde salen los precios y qué hacer si falta un dato.</p></div>
+          <div class="card"><h3>Probamos un flujo sencillo</h3><p>Partimos de las herramientas que ya tienes y probamos cómo preparar un borrador que tu equipo pueda revisar antes de enviarlo.</p></div>
+        </div>
+      </div>
+    </section>
 
-<footer>
-  <div class="wrap">© 2026 Yoselyn Mogollón · Operaciones &amp; Data</div>
-</footer>
+    <section id="caso">
+      <div class="wrap split">
+        <div>
+          <p class="source-label">Aponwaonet · Piloto interno</p>
+          <h2>Un proceso que el equipo podía revisar</h2>
+          <p>En Aponwaonet, cada cotización de respaldo eléctrico se armaba a mano. Había que revisar fotos, corregir registros de equipos y volver a comprobar los cálculos.</p>
+          <p>Definí cómo recoger los datos, documenté las reglas y coordiné su revisión técnica. El piloto genera un borrador en PDF y señala los datos que faltan. La aprobación sigue a cargo del responsable técnico.</p>
+          <a href="https://github.com/yoselynm2g/portafolio-operaciones-automatizacion_Yoselyn/blob/main/06-cotizador-respaldo-electrico/README-es.md">Leer el caso completo en GitHub</a>
+        </div>
+        <div class="metric">
+          <h3>Primera medición</h3>
+          <p><strong>Unas 3 horas</strong> desde que estaban disponibles las fotos hasta la cotización.</p>
+          <p>En un caso real, el plazo anterior se estimó en aproximadamente una semana. Las 3 horas se midieron por separado del levantamiento en campo.</p>
+        </div>
+      </div>
+    </section>
 
+    <section id="contacto" class="band">
+      <div class="wrap">
+        <h2>¿Qué parte de cotizar te quita más tiempo?</h2>
+        <p>Soy Yoselyn, administradora de empresas. Cuéntame qué pasa cuando entra una solicitud y en qué punto se demora. A partir de ahí podemos ver por dónde empezar.</p>
+        <div class="actions">
+          <a class="button" href="https://www.linkedin.com/in/yoselynmogollong/">Escríbeme por LinkedIn</a>
+          <a href="https://github.com/yoselynm2g/portafolio-operaciones-automatizacion_Yoselyn">Ver portafolio en GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap">Yoselyn Mogollón · Operaciones, datos y automatización</div></footer>
 </body>
 </html>
