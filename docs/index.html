@@ -87,13 +87,6 @@
     .band { background: #11162b; border-block: 1px solid var(--line); }
     .cards { display: grid; gap: 1rem; margin-top: 1.75rem; }
     .card p, .metric p:last-child { margin-bottom: 0; }
-    .source-label { color: var(--cyan); font-size: .95rem; font-weight: 700; }
-    .metric strong {
-      display: block;
-      font-family: Manrope, system-ui, sans-serif;
-      font-size: clamp(1.85rem, 4vw, 3rem);
-      color: var(--cyan);
-    }
     footer { border-top: 1px solid var(--line); padding-block: 1.5rem; color: var(--muted); }
     @media (min-width: 48rem) {
       .split { grid-template-columns: 1.45fr 1fr; }
@@ -107,7 +100,7 @@
       <a class="brand" href="#inicio">Yoselyn Mogollón</a>
       <nav aria-label="Navegación principal">
         <a href="#servicio">Servicio</a>
-        <a href="#caso">Caso Aponwaonet</a>
+        <a href="#caso">Del proceso manual al flujo medible</a>
         <a href="#contacto">Contacto</a>
       </nav>
     </div>
@@ -120,7 +113,7 @@
           <p class="lead">Si tienes que buscar datos en el chat, confirmar cuál lista de precios está vigente y rehacer el cálculo para cada cliente, te ayudo a ordenar ese proceso.</p>
           <div class="actions">
             <a class="button" href="#contacto">Cuéntame cómo cotizas</a>
-            <a href="#caso">Ver cómo lo hice en Aponwaonet</a>
+            <a href="#caso">Ver cómo cambia el proceso</a>
           </div>
         </div>
         <div class="flow">
@@ -150,16 +143,17 @@
     <section id="caso">
       <div class="wrap split">
         <div>
-          <p class="source-label">Aponwaonet · Piloto interno</p>
-          <h2>Un proceso que el equipo podía revisar</h2>
-          <p>En Aponwaonet, cada cotización de respaldo eléctrico se armaba a mano. Había que revisar fotos, corregir registros de equipos y volver a comprobar los cálculos.</p>
-          <p>Definí cómo recoger los datos, documenté las reglas y coordiné su revisión técnica. El piloto genera un borrador en PDF y señala los datos que faltan. La aprobación sigue a cargo del responsable técnico.</p>
-          <a href="https://github.com/yoselynm2g/portafolio-operaciones-automatizacion_Yoselyn/blob/main/06-cotizador-respaldo-electrico/README-es.md">Leer el caso completo en GitHub</a>
+          <h2>Del proceso manual a un flujo que puedes medir</h2>
+          <p>En un proyecto interno, armar cada cotización implicaba reunir información dispersa, corregir registros y volver a comprobar los cálculos.</p>
+          <p>Empecé por ordenar qué datos debía traer cada solicitud. Después documenté los criterios de revisión y estructuré un flujo que señala la información faltante y prepara un borrador para que el equipo lo revise antes de enviarlo.</p>
         </div>
         <div class="metric">
-          <h3>Primera medición</h3>
-          <p><strong>Unas 3 horas</strong> desde que estaban disponibles las fotos hasta la cotización.</p>
-          <p>En un caso real, el plazo anterior se estimó en aproximadamente una semana. Las 3 horas se midieron por separado del levantamiento en campo.</p>
+          <h3>Qué puedes empezar a medir</h3>
+          <ul>
+            <li>Tiempo desde que llega la solicitud hasta que se envía la cotización.</li>
+            <li>Solicitudes que se detienen porque falta información.</li>
+            <li>Cotizaciones pendientes de revisión o envío.</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -170,7 +164,6 @@
         <p>Soy Yoselyn, administradora de empresas. Cuéntame qué pasa cuando entra una solicitud y en qué punto se demora. A partir de ahí podemos ver por dónde empezar.</p>
         <div class="actions">
           <a class="button" href="https://www.linkedin.com/in/yoselynmogollong/">Escríbeme por LinkedIn</a>
-          <a href="https://github.com/yoselynm2g/portafolio-operaciones-automatizacion_Yoselyn">Ver portafolio en GitHub</a>
         </div>
       </div>
     </section>
